@@ -1,0 +1,65 @@
+<%= form_with(model: aluno) do |form| %>
+  <% if aluno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aluno.errors.count, "error") %> prohibited this aluno from being saved:</h2>
+
+      <ul>
+        <% aluno.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :curso %>
+    <%= form.text_field :curso %>
+  </div>
+
+  <%= form.fields_for :curriculo do |curriculo_fields| %>
+    <div class="field">
+    <%= curriculo_fields.label "Resumo de Experiências" %>
+    <%= curriculo_fields.text_field :resumo %>
+    </div>
+
+    <div class="field">
+    <%= curriculo_fields.label "Formação Acadêmica" %>
+    <%= curriculo_fields.text_field :formacao %>
+    </div>
+
+    <div class="field">
+    <%= curriculo_fields.label "Conhecimentos Técnicos" %>
+    <%= curriculo_fields.text_field :conhecimento %>
+    </div>
+
+    <div class="field">
+    <%= curriculo_fields.label "Idiomas" %>
+    <%= curriculo_fields.text_field :idioma %>
+    </div>
+
+    <div class="field">
+    <%= curriculo_fields.label "Informações Adicionais" %>
+    <%= curriculo_fields.text_field :outro %>
+    </div>
+    <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

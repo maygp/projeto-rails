@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @aluno.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @aluno.email %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @aluno.telefone %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @aluno.curso %>
+</p>
+
+<p>
+  <strong>Resumo Profissional:</strong>
+  <%= @aluno.curriculo.resumo %>
+</p>
+
+<p>
+  <strong>Conhecimentos Técnicos:</strong>
+  <%= @aluno.curriculo.conhecimento %>
+</p>
+
+<p>
+  <strong>Idiomas:</strong>
+  <%= @aluno.curriculo.idioma %>
+</p>
+
+<p>
+  <strong>Formação Acadêmica:</strong>
+  <%= @aluno.curriculo.formacao %>
+</p>
+
+<p>
+  <strong>Outras Informações:</strong>
+  <%= @aluno.curriculo.outro %>
+</p>
+
+<%= link_to 'Editar', edit_aluno_path(@aluno) %> |
+<%= link_to 'Voltar', alunos_path %>
